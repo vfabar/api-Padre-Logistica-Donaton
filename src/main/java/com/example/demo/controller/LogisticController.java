@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Logistic;
 import com.example.demo.service.LogisticService;
+
 
 @RestController
 @RequestMapping("/api/v1/logistic")
@@ -39,9 +41,9 @@ public class LogisticController {
     }
 
     @PostMapping
-    public ResponseEntity<Logistic> createLogistic(Logistic logistic) {
+    public ResponseEntity<Logistic> createLogistic(@RequestBody Logistic logistic) {
         Logistic savedLogistic = logisticService.save(logistic);
-        return ResponseEntity.ok(savedLogistic);
+        return ResponseEntity.status(201).body(savedLogistic);
     }
 
     @DeleteMapping("/{id}")

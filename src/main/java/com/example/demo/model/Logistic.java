@@ -23,10 +23,10 @@ public class Logistic {
     private Long idLogistic;
 
     @ManyToOne
-    @JoinColumn(name = "donation_id", nullable = false)
-    private Donation donation;
+    @JoinColumn(name = "idDonation", nullable = false)
+    private Donation idDonation;
 
     @ManyToOne
-    @JoinColumn(name = "needs_id", nullable = false)
-    private Needs needs;
+    @JoinColumn(name = "idNeeds", nullable = false)
+    private Needs idNeeds;
 }
