@@ -17,7 +17,7 @@ import com.example.demo.service.DistricService;
 
 
 @RestController
-@RequestMapping("/api/v1/distric")
+@RequestMapping("/distric")
 public class DistricController {
     
     @Autowired

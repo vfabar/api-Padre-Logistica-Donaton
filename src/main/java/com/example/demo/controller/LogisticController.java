@@ -17,7 +17,7 @@ import com.example.demo.service.LogisticService;
 
 
 @RestController
-@RequestMapping("/api/v1/logistic")
+@RequestMapping("/logistic")
 public class LogisticController {
     @Autowired
     private LogisticService logisticService;

@@ -17,7 +17,7 @@ import com.example.demo.service.RegionService;
 
 
 @RestController
-@RequestMapping("/api/v1/region")
+@RequestMapping("/region")
 public class RegionController {
     
     @Autowired

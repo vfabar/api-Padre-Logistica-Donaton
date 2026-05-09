@@ -17,7 +17,7 @@ import com.example.demo.service.UserTypeService;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/v1/user-types")
+@RequestMapping("/user-types")
 public class UserTypeController {
     
     @Autowired

@@ -8,6 +8,6 @@ RUN mvn clean package -DskipTests
 
 RUN cp target/*.jar app.jar
 
-EXPOSE 8080
+EXPOSE 3001
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--server.port=3001"]
