@@ -8,14 +8,16 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Distric;
 import com.example.demo.service.DistricService;
 
+
 @RestController
-@RequestMapping("/api/v1/distric")
+@RequestMapping("/distric")
 public class DistricController {
     
     @Autowired
@@ -40,9 +42,9 @@ public class DistricController {
     }
 
     @PostMapping
-    public ResponseEntity<Distric> createDistric(Distric distric) {
+    public ResponseEntity<Distric> createDistric(@RequestBody Distric distric) {
         Distric savedDistric = districService.save(distric);
-        return ResponseEntity.ok(savedDistric);
+        return ResponseEntity.status(201).body(savedDistric);
     }
 
     @DeleteMapping("/{id}")
