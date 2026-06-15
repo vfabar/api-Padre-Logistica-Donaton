@@ -22,8 +22,7 @@ public class UserController {
     
     @Autowired
     private UserService userService;
-    @Autowired
-    PasswordEncoder passwordEncoder;
+
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
@@ -45,9 +44,6 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        String encoded = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encoded);
-
 
         User savedUser = userService.save(user);
         return ResponseEntity.status(201).body(savedUser);
@@ -58,7 +54,11 @@ public class UserController {
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
+    @GetMapping("/me")
+    public ResponseEntity<User> WhoAmI() {
+        
+        return ResponseEntity.noContent().build();
+    }
 }
 
 
